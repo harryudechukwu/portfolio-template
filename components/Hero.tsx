@@ -24,7 +24,7 @@ interface SiteSettings {
 const bioPTComponents = {
   block: {
     normal: ({ children }: { children?: React.ReactNode }) => (
-      <p className="text-[15px] leading-relaxed text-neutral-700 mb-3">{children}</p>
+      <p className="text-[15px] leading-relaxed text-[#6B6B6B] mb-3">{children}</p>
     ),
   },
   marks: {
@@ -66,7 +66,7 @@ export default function Hero({ settings }: { settings: SiteSettings | null }) {
             />
           )}
           <div>
-            <p className="text-[15px] font-semibold text-neutral-900 leading-tight">{name}</p>
+            <p className="text-[15px] font-normal text-neutral-900 leading-tight">{name}</p>
             <p className="text-[15px] text-neutral-500">{jobTitle}</p>
           </div>
         </div>

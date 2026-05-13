@@ -56,46 +56,54 @@ export default function CaseStudy({ project }: { project: Project }) {
             )}
 
             {hasMeta && (
-              <div className="flex flex-wrap gap-x-8 gap-y-4 pt-5 border-t border-neutral-100">
-                {role && (
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
-                      Role
-                    </p>
-                    <p className="text-[15px] text-neutral-700">{role}</p>
+              <div className="bg-gray-50 py-5 px-6">
+                <div className="flex items-start">
+                  <div className="w-1/3">
+                    {role && (
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
+                          Role
+                        </p>
+                        <p className="text-[15px] text-neutral-700">{role}</p>
+                      </div>
+                    )}
                   </div>
-                )}
-                {timeline && (
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
-                      Timeline
-                    </p>
-                    <p className="text-[15px] text-neutral-700">{timeline}</p>
+                  <div className="w-1/3 flex justify-center">
+                    {timeline && (
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
+                          Timeline
+                        </p>
+                        <p className="text-[15px] text-neutral-700">{timeline}</p>
+                      </div>
+                    )}
                   </div>
-                )}
+                  <div className="w-1/3 flex justify-end">
+                    {liveUrl && (
+                      <div>
+                      <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
+                        Live Link
+                      </p>
+                      <a
+                        href={liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[15px] text-accent underline decoration-dotted underline-offset-4"
+                      >
+                        View project
+                      </a>
+                      </div>
+                    )}
+                  </div>
+                </div>
                 {tools?.length ? (
-                  <div>
+                  <div className="pt-4 mt-4 border-t border-neutral-200">
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
                       Tools
                     </p>
                     <p className="text-[15px] text-neutral-700">{tools.join(", ")}</p>
                   </div>
                 ) : null}
-                {liveUrl && (
-                  <div>
-                    <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
-                      Live
-                    </p>
-                    <a
-                      href={liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[15px] text-accent hover:underline"
-                    >
-                      View project ↗
-                    </a>
-                  </div>
-                )}
               </div>
             )}
           </header>
