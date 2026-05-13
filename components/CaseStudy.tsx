@@ -34,7 +34,7 @@ export default function CaseStudy({ project }: { project: Project }) {
             href="/"
             className="inline-flex items-center gap-1 text-[15px] text-neutral-400 hover:text-neutral-900 transition-colors mb-12"
           >
-            ← Back
+            go back
           </Link>
         </FadeUpItem>
 
@@ -68,36 +68,46 @@ export default function CaseStudy({ project }: { project: Project }) {
                       </div>
                     )}
                   </div>
-                  <div className="w-1/3 flex justify-center">
-                    {timeline && (
+                  {timeline && (
+                    <div className="w-1/3 flex justify-center">
                       <div>
                         <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
                           Timeline
                         </p>
                         <p className="text-[15px] text-neutral-700">{timeline}</p>
                       </div>
-                    )}
-                  </div>
-                  <div className="w-1/3 flex justify-end">
-                    {liveUrl && (
+                    </div>
+                  )}
+                  {liveUrl && (
+                    <div className="w-1/3 flex justify-end">
                       <div>
-                      <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
-                        Live Link
-                      </p>
-                      <a
-                        href={liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[15px] text-accent underline decoration-dotted underline-offset-4"
-                      >
-                        View project
-                      </a>
+                        <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
+                          Live Link
+                        </p>
+                        <a
+                          href={liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[15px] text-accent underline decoration-dotted underline-offset-4"
+                        >
+                          View project
+                        </a>
                       </div>
-                    )}
-                  </div>
+                    </div>
+                  )}
+                  {tools?.length && !liveUrl ? (
+                    <div className="w-1/3 flex justify-end">
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
+                          Tools
+                        </p>
+                        <p className="text-[15px] text-neutral-700">{tools.join(", ")}</p>
+                      </div>
+                    </div>
+                  ) : null}
                 </div>
-                {tools?.length ? (
-                  <div className="pt-4 mt-4 border-t border-neutral-200">
+                {tools?.length && liveUrl ? (
+                  <div className="pt-4 mt-4">
                     <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-400 mb-0.5">
                       Tools
                     </p>
