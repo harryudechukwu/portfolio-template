@@ -1,6 +1,6 @@
 .claude/
 .env.local
-.env.local.example
+
 .next
 out/
 node_modules/
