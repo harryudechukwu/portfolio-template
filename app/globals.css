@@ -2,5 +2,8 @@
 
 @theme {
   --color-accent: #003344;
-  --font-sans: var(--font-inter);
+}
+
+body {
+  font-family: var(--font-open-sans);
 }
